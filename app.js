@@ -19,9 +19,17 @@
             }
         }, false);
 
-        var w = window.open(url, "_self");
+        var width = 450,
+            height = 730,
+            left = (screen.width / 2) - (width / 2),
+            top = (screen.height / 2) - (height / 2);
+
+        var w = window.open(url, 'Spotify',
+        'menubar=no,location=no,resizable=no,scrollbars=no,status=no, width=' + width + ', height=' + height + ', top=' + top + ', left=' + left);
 
     }
+
+    
 
     function getUserData(accessToken) {
         return $.ajax({
