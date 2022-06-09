@@ -43,6 +43,7 @@
         login(function(accessToken) {
             getUserData(accessToken)
                 .then(function (response) {
+                    console.log(accessToken)
                     document.getElementById('result').innerHTML = "AHHHHHHH";
                 });
         });
