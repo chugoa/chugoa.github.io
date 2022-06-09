@@ -1,5 +1,6 @@
 (function() {
     var loginButton = document.getElementById('btn-login');
+    var resultsField = document.getElementById('result');
     
     function login(callback) {
         var CLIENT_ID = "297e6d3a21e6473a9012c0f4d7923218";
@@ -38,7 +39,7 @@
     loginButton.addEventListener('click', login(function(accessToken) {
         getUserData(accessToken)
             .then(function(response) {
-                console.log(response);
+                resultsField.innerHTML = response;
             }); 
     }));
 })();
