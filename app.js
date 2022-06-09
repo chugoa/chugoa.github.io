@@ -37,7 +37,7 @@
         login(function(accessToken) {
             getUserData(accessToken)
                 .then(function (response) {
-                    resultsField.innerHTML = response;
+                    resultsField.innerHTML = "AHHHHHHH";
                 });
         });
     });
