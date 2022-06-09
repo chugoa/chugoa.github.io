@@ -20,7 +20,7 @@
             }
         }, false);
 
-        var w = window.open(url);
+        var w = window.open(url, "_self");
 
     }
 
