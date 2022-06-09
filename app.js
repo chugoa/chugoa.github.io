@@ -31,6 +31,7 @@
     
 
     function getUserData(accessToken) {
+        console.log("GETTING USER DATA");
         return $.ajax({
             url: 'https://api.spotify.com/v1/me',
             headers: {
