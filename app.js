@@ -5,5 +5,5 @@
         console.log("TEST!!");
     }
     loginButton.addEventListener('click', test)
-})
+})();
 
