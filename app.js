@@ -1,6 +1,5 @@
 (function () {
     var loginButton = document.getElementById('btn-login');
-    var resultsField = document.getElementById('result');
 
     function login(callback) {
         var CLIENT_ID = "297e6d3a21e6473a9012c0f4d7923218";
@@ -37,7 +36,7 @@
         login(function(accessToken) {
             getUserData(accessToken)
                 .then(function (response) {
-                    resultsField.innerHTML = "AHHHHHHH";
+                    document.getElementById('result').innerHTML = "AHHHHHHH";
                 });
         });
     });
