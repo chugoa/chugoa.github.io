@@ -4,6 +4,6 @@
     function test() {
         console.log("TEST!!");
     }
-    loginButton.addEventListener('click', test)
+    loginButton.addEventListener('click', test);
 })();
 
