@@ -3,7 +3,7 @@
 
     function login(callback) {
         var CLIENT_ID = "297e6d3a21e6473a9012c0f4d7923218";
-        var REDIRECT_URI = "https://chugoa.github.io";
+        var REDIRECT_URI = "https%3A%2F%2Fchugoa.github.io";
         function getLoginURL(scopes) {
             return 'https://accounts.spotify.com/authorize?client_id=' + CLIENT_ID +
                 '&redirect_uri=' + encodeURIComponent(REDIRECT_URI) +
