@@ -1,7 +1,7 @@
 (function() {
     var loginButton = document.getElementById('btn-login');
     
-    function login() {
+    function login(callback) {
         var CLIENT_ID = "297e6d3a21e6473a9012c0f4d7923218";
         var REDIRECT_URI = "https://chugoa.github.io";
         function getLoginURL(scopes) {
@@ -15,7 +15,7 @@
         window.addEventListener("message", function(event) {
             var hash = JSON.parse(event.data);
             if (hash.type == 'access_token') {
-                console.log(hash.access_token);
+                callback(hash.access_token);
             }
         }, false);
 
@@ -23,9 +23,23 @@
 
     }
 
+    function getUserData(accessToken) {
+        return $.ajax({
+            url: 'https://api.spotify.com/v1/me',
+            headers: {
+               'Authorization': 'Bearer ' + accessToken
+            }
+        });
+    }
+
     function test() {
         console.log("TEST!!");
     }
-    loginButton.addEventListener('click', login);
+    loginButton.addEventListener('click', login(function(accessToken) {
+        getUserData(accessToken)
+            .then(function(response) {
+                console.log(response);
+            }); 
+    }));
 })();
 
